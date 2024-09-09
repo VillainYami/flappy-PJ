@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class AddScore : MonoBehaviour
 {
+    [SerializeField] private int scval;
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.CompareTag("Player"))
         {
-            Score.instance.UpdateScore();
+            ScoreManager.instance.UpdateScore(scval);
         }
     }
 }

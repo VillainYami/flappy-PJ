@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Score : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    public static Score instance;
+    public static ScoreManager instance;
     [SerializeField] private TextMeshProUGUI scoretext;
     private int score = 0;
 
@@ -13,9 +13,10 @@ public class Score : MonoBehaviour
     {
         if (instance == null) instance = this;
     }
-    public void UpdateScore()
+
+    public void UpdateScore(int val)
     {
-        score++;
+        score += val;
         scoretext.text = score.ToString();
     }
 }
