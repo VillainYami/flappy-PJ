@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scval: 1
+  acPoint: {fileID: 8300000, guid: 381e9a759ecfdb545bb91eaaed9fa64a, type: 3}
 --- !u!1 &2837569517643735606
 GameObject:
   m_ObjectHideFlags: 0

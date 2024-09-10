@@ -1,24 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GMState = GameManager.State;
 
 public class FlappyCtrl : MonoBehaviour
 {
     [SerializeField] private float velocity = 1.5f;
     [SerializeField] private float rotateSpeed = 10f;
+    [SerializeField] private AudioClip acWing;
+    private GameManager gmi;
 
     private Rigidbody2D rb;
 
     private void Start()
     {
+        gmi = GameManager.instance;
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0f;
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rb.velocity = Vector2.up * velocity;
+            if (gmi.GameState == GMState.READY)
+            {
+                gmi.GamePlay();
+                rb.gravityScale = 0.5f;
+            }
+            else if (gmi.GameState == GMState.PLAY)
+            {
+                gmi.PlayAudio(acWing);
+                rb.velocity = Vector2.up * velocity;
+            }
         }
     }
 
@@ -29,6 +43,6 @@ public class FlappyCtrl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        GameManager.instance.GameOver();
+        gmi.GameOver();
     }
 }

@@ -13,11 +13,14 @@ public class PipeSpawner : MonoBehaviour
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= maxTime)
+        if (GameManager.instance.GameState == GameManager.State.PLAY)
         {
-            SpawnPipe();
-            timer = 0;
+            if (timer >= maxTime)
+            {
+                SpawnPipe();
+                timer = 0;
+            }
+            timer += Time.deltaTime;
         }
     }
 
