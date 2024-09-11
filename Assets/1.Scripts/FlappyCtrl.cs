@@ -8,6 +8,7 @@ public class FlappyCtrl : MonoBehaviour
     [SerializeField] private float velocity = 1.5f;
     [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private AudioClip acWing;
+    [SerializeField] private AudioClip acDie;
     private GameManager gmi;
 
     private Rigidbody2D rb;
@@ -43,6 +44,13 @@ public class FlappyCtrl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        gmi.GameOver();
+        if (gmi.GameState == GMState.PLAY)
+        {
+            gmi.GameOver();
+            if (transform.position.y > 0)
+            {
+                gmi.PlayAudio(acDie);
+            }
+        }
     }
 }

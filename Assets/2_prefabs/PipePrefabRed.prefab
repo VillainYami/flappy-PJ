@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.65
+  upPipe: {fileID: 2293885116463043650}
+  downPipe: {fileID: 9000249698509940079}
 --- !u!61 &6587488876301948289
 BoxCollider2D:
   m_ObjectHideFlags: 0

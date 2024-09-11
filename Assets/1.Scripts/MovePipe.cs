@@ -5,7 +5,8 @@ using UnityEngine;
 public class MovePipe : MonoBehaviour
 {
     [SerializeField] private float speed = 0.65f;
-
+    [SerializeField] private BoxCollider2D upPipe;
+    [SerializeField] private BoxCollider2D downPipe;
     void Start()
     {
         
@@ -13,6 +14,13 @@ public class MovePipe : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        if (GameManager.instance.GameState == GameManager.State.PLAY)
+        {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+        }
+        else if (GameManager.instance.GameState == GameManager.State.GAMEOVER)
+        {
+            upPipe.enabled = downPipe.enabled = false;
+        }
     }
 }
