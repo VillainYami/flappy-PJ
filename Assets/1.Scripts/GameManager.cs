@@ -78,6 +78,10 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(StopTimer());
     }
+    public void GameHighScore()
+    {
+        ChangeState(State.HISCORE);
+    }
 
     IEnumerator StopTimer()
     {

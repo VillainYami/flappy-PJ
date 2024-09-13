@@ -6,9 +6,12 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    [SerializeField] private TextMeshProUGUI scoretext;
+
+    [SerializeField] private PlayCanvas canvas;
+
     private int score = 0;
 
+    public int Score { get { return score; } }
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -17,6 +20,6 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScore(int val)
     {
         score += val;
-        scoretext.text = score.ToString();
+        canvas.UpdateScore();
     }
 }
