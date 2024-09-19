@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         ChangeState(State.GAMEOVER);
         PlayAudio(acHit);
         floorAnim.enabled = false;
+        ScoreManager.instance.CheckHiScore();
 
         StartCoroutine(StopTimer());
     }

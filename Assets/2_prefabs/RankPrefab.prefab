@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3153593269787067758}
   - component: {fileID: 2209370129895948305}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: RankPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,10 +195,10 @@ MonoBehaviour:
   dateText: {fileID: 5394511338570591441}
   scoreText: {fileID: 8577596582501886933}
   medalSP:
-  - {fileID: -1374864527, guid: b7625fd1305fe0c4db03a20588221634, type: 3}
-  - {fileID: 2077160103, guid: b7625fd1305fe0c4db03a20588221634, type: 3}
   - {fileID: 1768208360, guid: b7625fd1305fe0c4db03a20588221634, type: 3}
   - {fileID: 2001848343, guid: b7625fd1305fe0c4db03a20588221634, type: 3}
+  - {fileID: -1374864527, guid: b7625fd1305fe0c4db03a20588221634, type: 3}
+  - {fileID: 2077160103, guid: b7625fd1305fe0c4db03a20588221634, type: 3}
 --- !u!222 &3153593269787067758
 CanvasRenderer:
   m_ObjectHideFlags: 0
